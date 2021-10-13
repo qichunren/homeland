@@ -10,7 +10,7 @@
       <%= render "shared/error_messages", target: @reply %>
       <%= render "/shared/editor_toolbar" %>
       <div class="form-group">
-        <%= f.text_area :body, class: "topic-editor form-control border p-2 rounded-md", rows: 10 %>
+        <%= f.text_area :body, class: "topic-editor form-control border p-2 rounded-md w-full", rows: 10 %>
       </div>
       <div class="form-actions justify-content-sm-between">
         <%= f.submit t("common.save"), class: "btn btn-primary hide-ios", 'data-disable-with' => t("common.saving") %>

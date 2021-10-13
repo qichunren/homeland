@@ -2,7 +2,7 @@
   <div class="media-body">
     <h1 class="media-heading">
       <%= render_node_name(node) %>
-      <span class="title">
+      <span class="title text-3xl ml-2">
         <%= topic.title %>
       </span>
       <%= topic_close_tag(topic) %>
@@ -14,7 +14,7 @@
         </a>
       </div>
     <% end %>
-    <div class="info">
+    <div class="info mt-2 text-gray-600 text-sm">
       <%= user_name_tag(topic.user, data: { author: true }) %>
       <span class="hidden-mobile">
         <% if topic.team %>
@@ -33,7 +33,7 @@
       <%= topic.hits %> <%= t("common.read_times")%>
     </div>
   </div>
-  <div class="avatar media-right d-md-none">
+  <div class="avatar media-right d-md-none block sm:hidden">
     <%= user_avatar_tag(@topic.user, :md) %>
   </div>
 </div>

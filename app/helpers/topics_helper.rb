@@ -55,6 +55,6 @@ module TopicsHelper
 
   def render_node_name(node)
     return "" if node.blank?
-    link_to(node.name, main_app.node_topics_path(node.id), class: "node")
+    link_to(node.name, main_app.node_topics_path(node.id), class: "node text-3xl text-gray-600")
   end
 end
