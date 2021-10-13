@@ -1,13 +1,13 @@
 <% if current_user && current_user.newbie? %>
-<div class="card">
-  <div class="card-header"><%= t("topics.newbie_tip") %></div>
+<div class="card shadow-sm bg-white rounded-lg mb-6 p-6">
+  <div class="card-header text-2xl"><%= t("topics.newbie_tip") %></div>
   <div class="card-body">
     <%= raw Setting.newbie_notices %>
   </div>
 </div>
 <% else %>
 
-<div class="card">
+<div class="card shadow-sm bg-white rounded-lg mb-6 p-6">
   <div class="card-body">
     <%= link_to t('topics.new_topic'), main_app.new_topic_path(node: @node&.id), class: 'btn btn-primary btn-block' %>
   </div>
@@ -19,12 +19,12 @@
 <%= raw Setting.topic_index_sidebar_html %>
 
 <% cache(["sidebar_statistics",Time.now.strftime("%Y-%m-%d %H")]) do %>
-<div class="card">
-  <div class="card-header"><%= t("common.statics")%></div>
+<div class="card shadow-sm bg-white rounded-lg mb-6">
+  <div class="card-header text-2xl p-6"><%= t("common.statics")%></div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><%= t("common.statics_users_count", count: User.unscoped.count) %></li>
-    <li class="list-group-item"><%= t("common.statics_topics_count", count: Topic.unscoped.count) %></li>
-    <li class="list-group-item"><%= t("common.statics_replies_count", count: Reply.unscoped.count) %></li>
+    <li class="list-group-item border-b border-gray-100 px-6 py-3 text-lg"><%= t("common.statics_users_count", count: User.unscoped.count) %></li>
+    <li class="list-group-item border-b border-gray-100 px-6 py-3 text-lg"><%= t("common.statics_topics_count", count: Topic.unscoped.count) %></li>
+    <li class="list-group-item border-b border-gray-100 px-6 py-3 text-lg"><%= t("common.statics_replies_count", count: Reply.unscoped.count) %></li>
   </ul>
 </div>
 <% end %>

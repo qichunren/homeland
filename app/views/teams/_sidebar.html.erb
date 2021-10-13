@@ -1,6 +1,6 @@
 <div class="sidebar team-sidebar col-sm-4 col-span-4">
   <div class="card members">
-    <div class="card-header"><%= t('teams.users') %></div>
+    <div class="card-header text-2xl"><%= t('teams.users') %></div>
     <div class="card-body">
       <% @team.team_users.accepted.includes(:user).limit(10).each do |team_user| %>
         <%= user_avatar_tag(team_user.user, :sm) %>

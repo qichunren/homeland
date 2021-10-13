@@ -1,8 +1,8 @@
 <% if Setting.has_module? :github %>
 <div class="card d-md-none d-lg-block hidden-mobile" id="user_github_repos">
   <% if not user.github.blank? %>
-    <div class="card-header">GitHub Public Repos</div>
-    <ul class="list-group list-group-flush">
+    <div class="card-header text-2xl">GitHub Public Repos</div>
+    <ul class="list-group list-group-flush mt-6">
       <% user.github_repositories.each do |item| %>
       <li class="list-group-item">
         <div class="title">

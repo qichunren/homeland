@@ -1,19 +1,19 @@
 <% cache([topic, topic.user_avatar_raw, type]) do %>
-  <div class="topic media topic-<%= topic.id %>" data-prefetch="<%= main_app.topic_path(topic) %>">
-    <div class="avatar">
+  <div class="topic media topic-<%= topic.id %> flex items-center p-4 border-b border-gray-100 hover:bg-gray-100" data-prefetch="<%= main_app.topic_path(topic) %>">
+    <div class="avatar mr-4 flex-none">
       <%= user_avatar_tag(topic.user, :md) %>
     </div>
-    <div class="infos media-body">
-      <div class="title media-heading">
+    <div class="infos media-body flex-grow">
+      <div class="title media-heading text-lg">
         <%= link_to(main_app.topic_path(topic), title: topic.title) do %>
-          <span class="node"><%= topic.node&.name %></span>
+          <span class="node text-gray-600"><%= topic.node&.name %></span>
           <%= topic.title %>
         <% end %>
         <%= icon_tag("pin") if type == "suggest" %>
         <%= topic_excellent_tag(topic) %>
         <%= topic_close_tag(topic) %>
       </div>
-      <div class="info">
+      <div class="info mt-1 text-gray-600 text-sm">
         <%= user_name_tag(topic.user) %>
         <span class="hidden-mobile">
           •
@@ -25,7 +25,7 @@
         </span>
       </div>
     </div>
-    <div class="count media-right">
+    <div class="count media-right flex-none bg-blue-100 w-12 h-6 text-center text-base text-gray-600 rounded-full">
       <% if topic.replies_count > 0 %>
         <%= link_to(topic.replies_count,"#{main_app.topic_path(topic)}#reply-#{topic.last_reply_id}", class: "state-false") %>
       <% end %>

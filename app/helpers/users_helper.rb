@@ -39,7 +39,7 @@ module UsersHelper
 
   def user_avatar_tag(user, version = :md, link: true, timestamp: nil)
     width = user_avatar_width_for_size(version)
-    img_class = "media-object avatar-#{width}"
+    img_class = "media-object avatar-#{width} w-12 h-12 rounded-full"
 
     return "" if user.blank?
 

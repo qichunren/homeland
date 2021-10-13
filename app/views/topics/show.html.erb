@@ -20,7 +20,7 @@
   </script>
 <% end %>
 <div class="row grid grid-cols-12 gap-4">
-  <div class="col-lg-9 col-span-9">
+  <div class="col-lg-9 col-span-9 shadow-sm bg-white rounded-lg mb-6 p-6">
     <div class="topic-detail card">
       <%= render partial: "topics/topic_info", locals: { topic: @topic, node: @node } %>
       <% if @topic.excellent? %>
@@ -44,7 +44,7 @@
     </div>
     <%= render partial: "ban_reason" %>
     <% if @replies.blank? %>
-      <div class="no-result">
+      <div class="no-result my-8 bg-gray-50 text-gray-600 text-center">
         <%= t("topics.no_replies") %>
       </div>
     <% else %>
