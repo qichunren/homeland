@@ -77,7 +77,7 @@
         </div>
       </div>
       <% if !owner? @user %>
-        <div class="buttons row">
+        <div class="buttons row grid grid-cols-12 gap-4">
           <div class="col-sm-6">
             <%= follow_user_tag(@user) %>
           </div>
@@ -87,7 +87,7 @@
         </div>
       <% end %>
       <% if !@user.tagline.blank? %>
-        <div class="tagline row">
+        <div class="tagline row grid grid-cols-12 gap-4">
           <%= @user.tagline %>
         </div>
       <% end %>
