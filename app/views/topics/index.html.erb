@@ -5,7 +5,7 @@
 <% @suggest_topics = @suggest_topics.to_a %>
 <%= render "topics/node_info", node: @node %>
 <div class="row grid grid-cols-12 gap-4">
-  <div class="col-lg-9">
+  <div class="col-lg-9 col-span-9">
     <div class="topics topics-<%= action_name %> card">
       <div class="card-body item-list">
         <% if @suggest_topics.present? %>
@@ -34,7 +34,7 @@
       </script>
     <% end %>
   </div>
-  <div class="sidebar col-lg-3">
+  <div class="sidebar col-lg-3 col-span-3">
     <%= render "topics/sidebar_for_topic_index" %>
   </div>
 </div>

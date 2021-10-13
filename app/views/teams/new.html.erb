@@ -1,7 +1,7 @@
 <% title_tag t("teams.new_team") %>
 <div class="row grid grid-cols-12 gap-4">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-8">
+  <div class="col-sm-2 col-span-2"></div>
+  <div class="col-sm-8 col-span-8">
     <div class="card card-lg">
       <div class="card-body">
         <%= form_for @team do |f| %>
@@ -34,5 +34,5 @@
         <% end %>
       </div>
     </div>
-    <div class="col-sm-2"></div>
+    <div class="col-sm-2 col-span-2"></div>
   </div>

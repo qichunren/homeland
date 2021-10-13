@@ -4,8 +4,8 @@ auth_session = session[:omniauth] || {}
 auth_info = auth_session["info"]
 %>
 <div class="row grid grid-cols-12 gap-4">
-  <div class="col"></div>
-  <div class="col-md-5">
+  <div class="col col-span-2"></div>
+  <div class="col-md-5 col-span-5">
     <div class="card card-l6">
       <div class="card-body">
         <div class="card-title"><%= t("common.login") %> <%= Setting.app_name %></div>
@@ -47,10 +47,10 @@ auth_info = auth_session["info"]
       </div>
     <% end %>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3 col-span-3">
     <div class="card">
       <%= render partial: "devise/shared/links" %>
     </div>
   </div>
-  <div class="col"></div>
+  <div class="col col-span-2"></div>
 </div>

@@ -1,4 +1,4 @@
-<div class="sidebar col-lg-4<%= ' hide-ios' if turbolinks_app? && action_name != 'show' %>" id='sidebar'>
+<div class="sidebar col-lg-4<%= ' hide-ios' if turbolinks_app? && action_name != 'show' %> col-span-4" id='sidebar'>
   <div class="card profile">
     <div class="card-body">
       <div class="media">
@@ -78,10 +78,10 @@
       </div>
       <% if !owner? @user %>
         <div class="buttons row grid grid-cols-12 gap-4">
-          <div class="col-sm-6">
+          <div class="col-sm-6 col-span-6">
             <%= follow_user_tag(@user) %>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6 col-span-6">
             <%= block_user_tag(@user) %>
           </div>
         </div>

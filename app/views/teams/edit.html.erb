@@ -1,7 +1,7 @@
 <% title_tag t("teams.edit_team") %>
 <%= render '/teams/header' %>
 <div class="card">
-  <div class="card-body col-md-8 mx-auto">
+  <div class="card-body col-md-8 mx-auto col-span-8">
     <%= form_for @team do |f| %>
       <%= render "shared/error_messages", target: @team %>
       <div class="form-group">
@@ -24,11 +24,11 @@
         <label for="user_email_public" class="checkbox"><%= t("users.email_permission")%></label>
       </div>
       <div class="form-group row grid grid-cols-12 gap-4">
-        <div class="col-sm-7">
+        <div class="col-sm-7 col-span-7">
           <%= f.label :avatar %>
           <%= f.file_field :avatar, class: "form-control" %>
         </div>
-        <div class="col-sm-5">
+        <div class="col-sm-5 col-span-5">
           <%= user_avatar_tag(@team, :lg, link: false) %>
         </div>
       </div>

@@ -1,10 +1,10 @@
 <div class="row grid grid-cols-12 gap-4">
   <%= render 'menu' %>
-  <div class="col-md-10">
+  <div class="col-md-10 col-span-10">
     <div class="card card-lg">
       <div class="card-body">
         <div class="row grid grid-cols-12 gap-4">
-          <div class="col-md-8">
+          <div class="col-md-8 col-span-8">
             <%= form_for @user, url: setting_path, method: :put, html: { enctype: "multipart/form-data" } do |f| %>
               <%= render "shared/error_messages", target: @user %>
               <input type="hidden" name="by" value="reward">
@@ -33,7 +33,7 @@
               </div>
             <% end %>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 col-span-4">
             <div class="markdown">
               <%= markdown("### :gift: 关于打赏\n\n
 
