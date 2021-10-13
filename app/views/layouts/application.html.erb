@@ -40,22 +40,22 @@
     <%= javascript_packs_with_chunks_tag "application", 'data-turbolinks-track': "reload" %>
     <%= yield :javascripts %>
   </head>
-  <body class="page-<%= controller_name %><%= ' infinite-scroll' if turbolinks_app? %>" data-controller-name="<%= controller_name %>">
+  <body class="page-<%= controller_name %><%= ' infinite-scroll' if turbolinks_app? %> bg-gray-50" data-controller-name="<%= controller_name %>">
     <%= javascript_pack_tag "bootstrap", 'data-turbolinks-eval': "false" %>
-    <div class="header navbar navbar-expand-md">
-      <div class="container mx-auto">
-        <div class="navbar-header" data-turbolinks-permanent>
+    <div class="header navbar navbar-expand-md bg-white border-b border-gray-100">
+      <div class="container mx-auto flex items-center justify-start h-16">
+        <div class="navbar-header text-3xl mr-4" data-turbolinks-permanent>
           <%= raw Setting.navbar_brand_html %>
         </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar">
+        <button class="navbar-toggler sm:hidden" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar">
           <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
         </button>
         <div id="main-navbar"  class="collapse navbar-collapse">
           <%= yield :header %>
           <%= render "shared/navbar" %>
         </div>
-        <div class="ml-auto d-flex navbar-right">
-          <form class="navbar-form d-none d-lg-flex mr-2 form-search active" action="/search" method="GET">
+        <div class="ml-auto d-flex navbar-right flex">
+          <form class="navbar-form d-none d-lg-flex mr-2 form-search active border" action="/search" method="GET">
             <i class="fa btn-search fa-search"></i>
             <input type="text" name="q" class="form-control" value="<%= params[:q] %>" placeholder="<%= t("common.search") %>"></input>
         </form>
@@ -64,7 +64,7 @@
     </div>
   </div>
   <%= yield :sub_navbar %>
-  <div id="main" class="main-container container mx-auto">
+  <div id="main" class="main-container container mx-auto mt-6">
     <%= render AlertComponent.new %>
     <%= content_for?(:main) ? yield(:main) : yield %>
   </div>

@@ -1,4 +1,4 @@
-<ul class="nav navbar-nav user-bar">
+<ul class="nav navbar-nav user-bar flex">
   <% if current_user %>
     <%
   badge_class = ""
@@ -47,8 +47,8 @@
     </li>
   <% else %>
     <% if !Setting.sso_enabled? %>
-      <li class="nav-item"><%= link_to t("common.register"), main_app.new_user_registration_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to t("common.register"), main_app.new_user_registration_path, class: "nav-link px-3 py-2" %></li>
     <% end %>
-    <li class="nav-item"><%= link_to t("common.login"), main_app.new_user_session_path, class: "nav-link" %></li>
+    <li class="nav-item"><%= link_to t("common.login"), main_app.new_user_session_path, class: "nav-link px-3 py-2" %></li>
   <% end %>
 </ul>

@@ -1,5 +1,5 @@
 <% content_for :sub_navbar do %>
-  <div class="sub-navbar node-header <%= "node-header-with-node" if node %> hide-ios">
+  <div class="sub-navbar node-header <%= "node-header-with-node" if node %> hide-ios bg-white">
     <div class="container mx-auto">
       <% if !node.blank? %>
         <div class="title">
@@ -16,26 +16,26 @@
           <%= sanitize_markdown node.summary_html %>
         </div>
       <% else %>
-        <ul class="filter nav nav-pills">
-          <li class="<%= ' active' if action_name == 'index' %>">
+        <ul class="filter nav nav-pills flex text-gray-600">
+          <li class="<%= ' active' if action_name == 'index' %> px-3 py-2 hover:text-black">
             <a href="<%= main_app.topics_path %>" data-turbolinks-action="replace"><%= t("topics.topic_list.latest") %></a>
           </li>
-          <li class="<%= ' active' if action_name == 'last' %>">
+          <li class="<%= ' active' if action_name == 'last' %> px-3 py-2 hover:text-black">
             <%= link_to(t("topics.topic_list.recent"), main_app.last_topics_path, data: { 'turbolinks-action': 'replace' }) %>
           </li>
-          <li class="<%= ' active' if action_name == 'excellent' %>">
+          <li class="<%= ' active' if action_name == 'excellent' %> px-3 py-2 hover:text-black">
             <a href="<%= main_app.excellent_topics_path %>" data-turbolinks-action="replace"><i class="fa fa-award"></i> <%= t("topics.topic_list.excellent") %></a>
           </li>
-          <li class="<%= ' active' if action_name == 'popular' %>">
+          <li class="<%= ' active' if action_name == 'popular' %> px-3 py-2 hover:text-black">
             <a href="<%= main_app.popular_topics_path %>" data-turbolinks-action="replace"><%= t("topics.topic_list.popular") %></a>
           </li>
           <% if can?(:ban, Topic) %>
-            <li class="<%= ' active' if action_name == 'banned' %>">
+            <li class="<%= ' active' if action_name == 'banned' %> px-3 py-2 hover:text-black">
               <%= link_to(t("topics.topic_list.banned"), main_app.banned_topics_path, data: { 'turbolinks-action': 'replace' }) %>
             </li>
           <% end %>
           <% if !mobile? %>
-            <li class="<%= ' active' if action_name == 'last_reply' %>">
+            <li class="<%= ' active' if action_name == 'last_reply' %> px-3 py-2 hover:text-black">
               <%= link_to(t("topics.topic_list.last_reply"), main_app.last_reply_topics_path, data: { 'turbolinks-action': 'replace' }) %>
             </li>
           <% end %>
