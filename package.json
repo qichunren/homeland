@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "./bin/webpack-dev-server",
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/javascript/front/index.tailwind.css"
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/javascript/front/index.tailwind.css --watch"
   },
   "dependencies": {
     "@babel/preset-react": "~7.10",
