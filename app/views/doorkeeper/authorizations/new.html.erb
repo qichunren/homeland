@@ -27,7 +27,7 @@
             <%= hidden_field_tag :state, @pre_auth.state %>
             <%= hidden_field_tag :response_type, @pre_auth.response_type %>
             <%= hidden_field_tag :scope, @pre_auth.scope %>
-            <%= submit_tag t('doorkeeper.authorizations.buttons.authorize'), class: "btn btn-primary btn-block" %>
+            <%= submit_tag t('doorkeeper.authorizations.buttons.authorize'), class: "btn btn-primary btn-block bg-blue-700 text-white text-xl rounded-lg w-full block py-2" %>
           <% end %>
 
           <%= form_tag oauth_authorization_path, class: "col-md-6 col-span-6", style: "margin-bottom: 0", method: :delete do %>

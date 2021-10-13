@@ -8,8 +8,8 @@
 <% else %>
 
 <div class="card shadow-sm bg-white rounded-lg mb-6 p-6">
-  <div class="card-body">
-    <%= link_to t('topics.new_topic'), main_app.new_topic_path(node: @node&.id), class: 'btn btn-primary btn-block' %>
+  <div class="card-body text-center p-4">
+    <%= link_to t('topics.new_topic'), main_app.new_topic_path(node: @node&.id), class: 'btn btn-primary btn-block bg-blue-700 text-white text-xl rounded-lg w-full block py-2' %>
   </div>
 </div>
 <% end %>

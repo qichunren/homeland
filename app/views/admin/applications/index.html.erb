@@ -3,7 +3,7 @@
 <% end %>
 <div class="toolbar">
   <form class="form-inline" action="<%= admin_applications_path %>">
-    <input type="text" name="q" class="form-control" value="<%= params[:q] %>" placeholder="Name">
+    <input type="text" name="q" class="form-control border p-2" value="<%= params[:q] %>" placeholder="Name">
     <%= select_tag(:level, options_for_select([['All Level',''], ['Level 0', 0], ['Level 1', 1], ['Level 2', 2], ['Level 3', 3]], params[:level]), class: 'form-control') %>
     <button class="btn btn-secondary">Search</button>
   </form>

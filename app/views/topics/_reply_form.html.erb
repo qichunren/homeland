@@ -2,7 +2,7 @@
 <%= form_for(Reply.new, url: topic_replies_path(@topic), remote: true, id: "new_reply") do |f| %>
 
   <div class="form-group">
-    <%= f.text_area :body, class: "topic-editor form-control", rows: "4", tabindex: "1" %>
+    <%= f.text_area :body, class: "topic-editor form-control border p-2 rounded-md", rows: "4", tabindex: "1" %>
   </div>
   <%= f.hidden_field :reply_to_id %>
   <div class="submit-buttons">

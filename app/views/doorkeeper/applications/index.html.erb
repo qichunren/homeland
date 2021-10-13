@@ -3,7 +3,7 @@
   <div class="col-md-10 col-span-10">
     <div class="card card-lg">
       <div class="card-body">
-        <div class="card-title clearfix">
+        <div class="card-title clearfix text-2xl">
           <%= t("user_setting.applciations") %>
           <div class="actions">
             <%= link_to "New Application", new_oauth_application_path, class: 'btn btn-primary btn-sm' %>
@@ -38,7 +38,7 @@
     </div>
     <div class="card card-lg">
       <div class="card-body">
-        <div class="card-title clearfix">
+        <div class="card-title clearfix text-2xl">
           <div>Authorized Apps</div>
         </div>
         <p>You have granted <%= @authorized_applications.count %> applications access to your account.</p>

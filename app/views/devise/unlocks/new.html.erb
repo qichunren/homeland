@@ -5,17 +5,17 @@
   <div class="col-md-6 col-span-6">
     <div class="card card-lg">
       <div class="card-body">
-        <div class="card-title">重新发送解锁邮件</div>
+        <div class="card-title text-2xl">重新发送解锁邮件</div>
 
         <%= form_for resource, as: resource_name, url: unlock_path(resource_name), method: :post do |f| %>
           <%= render "shared/error_messages", target: resource %>
 
-          <div class="form-group">
-            <%= f.text_field :email, class: "form-control form-control-lg", placeholder: "Email" %>
+          <div class="form-group py-3">
+            <%= f.text_field :email, class: "form-control form-control-lg border p-2 rounded-md", placeholder: "Email" %>
           </div>
 
           <div class="form-actions">
-            <%= f.submit "重新发送解锁邮件", class: 'btn btn-primary btn-lg btn-block' %>
+            <%= f.submit "重新发送解锁邮件", class: 'btn btn-primary btn-lg btn-block btn-lg btn-block bg-blue-700 text-white text-xl rounded-lg w-full block py-2' %>
           </div>
         <% end %>
       </div>

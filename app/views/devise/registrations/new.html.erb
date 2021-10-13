@@ -16,11 +16,11 @@ end
 <div class="row grid grid-cols-12 gap-4">
   <div class="col col-span-3"></div>
   <div class="col-lg-6 col-span-6">
-    <div class="card card-lg shadow-sm bg-white rounded-lg">
+    <div class="card card-lg shadow-sm bg-white rounded-lg p-6">
       <div class="card-body">
-        <div class="card-title">
+        <div class="card-title flex items-center text-2xl">
           <%= t("users.register_user") %>
-          <div class="actions hide-ios">
+          <div class="actions hide-ios ml-7 text-base text-blue-600">
             <%= link_to t("common.login"), new_session_path(resource_name) %>
           </div>
         </div>
@@ -38,25 +38,25 @@ end
           <% end %>
           <%= render "shared/error_messages", target: resource %>
           <%= form_group(f, :login) do %>
-            <%= f.text_field :login, class: "form-control form-control-lg", placeholder: t("users.login"), hint: t("users.suggest_using_twitter_id") %>
+            <%= f.text_field :login, class: "form-control form-control-lg border p-2 rounded-md", placeholder: t("users.login"), hint: t("users.suggest_using_twitter_id") %>
           <% end %>
           <%= form_group(f, :name) do %>
-            <%= f.text_field :name, class: "form-control form-control-lg", placeholder: t("activerecord.attributes.user.name") %>
+            <%= f.text_field :name, class: "form-control form-control-lg border p-2 rounded-md", placeholder: t("activerecord.attributes.user.name") %>
           <% end %>
           <%= form_group(f, :email) do %>
-            <%= f.text_field :email, type: :email, class: "form-control form-control-lg", placeholder: t("activerecord.attributes.user.email") %>
+            <%= f.text_field :email, type: :email, class: "form-control form-control-lg border p-2 rounded-md", placeholder: t("activerecord.attributes.user.email") %>
           <% end %>
-          <div class="form-group">
+          <div class="form-group flex flex-col py-3">
             <div class="custom-control custom-checkbox custom-checkbox-lg">
               <%= f.check_box :email_public, checked: true, class: "custom-control-input" %>
               <label for="user_email_public"  class="custom-form-label"><%= t("activerecord.attributes.user.email_public") %></label>
             </div>
           </div>
           <%= form_group(f, :password) do %>
-            <%= f.password_field :password, class: "form-control form-control-lg", placeholder: t("activerecord.attributes.user.password") %>
+            <%= f.password_field :password, class: "form-control form-control-lg border p-2 rounded-md", placeholder: t("activerecord.attributes.user.password") %>
           <% end %>
           <%= form_group(f, :password_confirmation) do %>
-            <%= f.password_field :password_confirmation, class: "form-control form-control-lg", placeholder: t("activerecord.attributes.user.password_confirmation") %>
+            <%= f.password_field :password_confirmation, class: "form-control form-control-lg border p-2 rounded-md", placeholder: t("activerecord.attributes.user.password_confirmation") %>
           <% end %>
           <%= form_group(f, :base, label: false) do %>
             <div class="input-group input-group-lg">
@@ -64,7 +64,7 @@ end
             </div>
           <% end %>
           <div class="form-actions">
-            <%= f.submit t('users.submit_new_user'), class: "btn btn-lg btn-primary", 'data-disable-with' => t("common.submitting") %>
+            <%= f.submit t('users.submit_new_user'), class: "btn btn-lg btn-primary btn-lg btn-block bg-blue-700 text-white text-xl rounded-lg w-full block py-2", 'data-disable-with' => t("common.submitting") %>
           </div>
         <% end %>
       </div>

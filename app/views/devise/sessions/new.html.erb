@@ -6,9 +6,9 @@ auth_info = auth_session["info"]
 <div class="row grid grid-cols-12 gap-4">
   <div class="col col-span-2"></div>
   <div class="col-md-5 col-span-5">
-    <div class="card card-l6 shadow-sm bg-white rounded-lg">
+    <div class="card card-l6 shadow-sm bg-white rounded-lg p-6">
       <div class="card-body">
-        <div class="card-title"><%= t("common.login") %> <%= Setting.app_name %></div>
+        <div class="card-title text-2xl"><%= t("common.login") %> <%= Setting.app_name %></div>
         <% if auth_info.present? %>
           <div class="alert">
             登录 <%= Setting.app_name %> 账号，以绑定 <strong><%= Homeland::Utils.omniauth_name(auth_session["provider"]) %></strong> 三方登录。
@@ -16,14 +16,14 @@ auth_info = auth_session["info"]
         <% end %>
         <%= form_for resource, as: resource_name, url: session_path(resource_name) do |f| %>
           <%= render "/shared/error_messages", target: resource %>
-          <div class="form-group">
-            <%= f.text_field :login, class: "form-control form-control-lg", placeholder: "用户名 / Email" %>
+          <div class="form-group flex flex-col py-3">
+            <%= f.text_field :login, class: "form-control form-control-lg border p-2 rounded-md", placeholder: "用户名 / Email" %>
           </div>
-          <div class="form-group">
-            <%= f.text_field :password, type: :password, class: "form-control form-control-lg", placeholder: "密码" %>
+          <div class="form-group flex flex-col py-3">
+            <%= f.text_field :password, type: :password, class: "form-control form-control-lg border p-2 rounded-md", placeholder: "密码" %>
           </div>
           <% if devise_mapping.rememberable? -%>
-            <div class="form-group">
+            <div class="form-group flex flex-col py-3">
               <div class="custom-control custom-checkbox">
                 <%= f.check_box :remember_me, class: "custom-control-input" %>
                 <label class="custom-form-label" for="user_remember_me"><%= t("common.remember_me") %></label>
@@ -31,7 +31,7 @@ auth_info = auth_session["info"]
             </div>
           <% end -%>
           <div class="form-actions">
-            <%= f.submit t("common.login"), class: "btn btn-primary btn-lg btn-block", 'data-disable-with' => t("common.logining") %>
+            <%= f.submit t("common.login"), class: "btn btn-primary btn-lg btn-block bg-blue-700 text-white text-xl rounded-lg w-full block py-2", 'data-disable-with' => t("common.logining") %>
           </div>
         <% end %>
       </div>
@@ -48,7 +48,7 @@ auth_info = auth_session["info"]
     <% end %>
   </div>
   <div class="col-md-3 col-span-3">
-    <div class="card shadow-sm bg-white rounded-lg mb-6 p-6">
+    <div class="card shadow-sm bg-white rounded-lg mb-6">
       <%= render partial: "devise/shared/links" %>
     </div>
   </div>

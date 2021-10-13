@@ -8,7 +8,7 @@
         </div>
         <div class="modal-body">
           <div class="mb-3">
-            <select class="form-control" onchange="$('#ban-modal textarea').val($(this).val())" name="reason">
+            <select class="form-control border p-2" onchange="$('#ban-modal textarea').val($(this).val())" name="reason">
               <option value="" selected><%= t("topics.ban_directly") %></option>
               <% Setting.ban_reasons.each do |str| %>
                 <option value="<%= str %>"><%= str %></option>
@@ -17,7 +17,7 @@
           </div>
           <div>
             <label><%= t("topics.ban_with_reason") %></label>
-            <textarea class="form-control" name="reason_text" rows="4"></textarea>
+            <textarea class="form-control border p-2" name="reason_text" rows="4"></textarea>
           </div>
         </div>
         <div class="modal-footer">

@@ -1,6 +1,6 @@
 <div class="edit-reply card card-lg">
   <div class="card-body">
-    <div class="card-title">
+    <div class="card-title text-2xl">
       <%= t("replies.edit_reply") %>
       <div class="actions">
         <div class="topic-link"><%= topic_title_tag(@topic) %></div>
@@ -10,7 +10,7 @@
       <%= render "shared/error_messages", target: @reply %>
       <%= render "/shared/editor_toolbar" %>
       <div class="form-group">
-        <%= f.text_area :body, class: "topic-editor form-control", rows: 10 %>
+        <%= f.text_area :body, class: "topic-editor form-control border p-2 rounded-md", rows: 10 %>
       </div>
       <div class="form-actions justify-content-sm-between">
         <%= f.submit t("common.save"), class: "btn btn-primary hide-ios", 'data-disable-with' => t("common.saving") %>

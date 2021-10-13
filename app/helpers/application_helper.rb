@@ -135,7 +135,7 @@ module ApplicationHelper
   # end
   def form_group(form, field, opts = {}, &block)
     has_errors = form.object.errors[field].present?
-    opts[:class] ||= "form-group"
+    opts[:class] ||= "form-group flex flex-col py-3"
     opts[:class] += " has-error" if has_errors
 
     content_tag :div, class: opts[:class] do
