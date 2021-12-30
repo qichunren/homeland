@@ -3,7 +3,7 @@ name: Test
 on: [push, pull_request]
 jobs:
 
-  test_ruby_3.0.1:
+  test_ruby_3-0-1:
     name: CI Test
     runs-on: ubuntu-latest
     services:
@@ -43,7 +43,7 @@ jobs:
       - run: yarn
       - run: bundle exec rails test
 
-  test_ruby_3.0.3:
+  test_ruby_3-0-3:
     name: CI Test
     runs-on: ubuntu-latest
     services:
