@@ -12,8 +12,8 @@ jobs:
           - 5432:5432
         env:
           POSTGRES_DB: homeland-test
-          POSTGRES_USER: "postgres"
-          POSTGRES_PASSWORD: ""
+          POSTGRES_USER: "admin"
+          POSTGRES_PASSWORD: "123456"
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -29,6 +29,7 @@ jobs:
     env:
       RAILS_ENV: test
       REDIS_URL: redis://redis:6379/1
+      DATABASE_URL: postgres://admin:123456@postgres:5432/homeland-test
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
