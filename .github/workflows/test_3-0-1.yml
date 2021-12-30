@@ -8,8 +8,6 @@ jobs:
     services:
       postgres:
         image: postgres
-        ports:
-          - 5432:5432
         env:
           POSTGRES_DB: homeland-test
           POSTGRES_USER: "admin"
